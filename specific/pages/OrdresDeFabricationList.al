@@ -46,6 +46,7 @@ page 60002 "Ordres De Fabrication List"
                 {
                     ApplicationArea = All;
                     Caption = 'Date Fin Prévue';
+                    StyleExpr = DeadlineStyle;
                 }
 
             }
@@ -71,4 +72,28 @@ page 60002 "Ordres De Fabrication List"
             }
         }
     }
+
+    var
+        DeadlineStyle: Text;
+
+    trigger OnAfterGetRecord()
+    begin
+        DeadlineStyle := SetDeadlineStyle();
+    end;
+
+    local procedure SetDeadlineStyle(): Text
+    var
+        CurrentDate: Date;
+        DaysUntilDeadline: Integer;
+    begin
+        CurrentDate := Today;
+        DaysUntilDeadline := Rec.date_fin_prev - CurrentDate;
+
+        if DaysUntilDeadline < 0 then
+            exit('Unfavorable')
+        else if DaysUntilDeadline <= 2 then
+            exit('Ambiguous')
+        else
+            exit('Favorable');
+    end;
 }
