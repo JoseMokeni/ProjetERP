@@ -32,6 +32,7 @@ page 60000 "Composants List"
                 {
                     ApplicationArea = All;
                     Caption = 'Stock';
+                    StyleExpr = StyleTxt;
                 }
 
             }
@@ -57,4 +58,19 @@ page 60000 "Composants List"
             }
         }
     }
+
+    var
+        StyleTxt: Text;
+
+    trigger OnAfterGetRecord()
+    begin
+        StyleTxt := SetStockStyle();
+    end;
+
+    local procedure SetStockStyle(): Text
+    begin
+        if Rec.Stock < 5 then
+            exit('Unfavorable');
+        exit('Favorable');
+    end;
 }
