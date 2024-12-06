@@ -9,10 +9,11 @@ table 60002 "Ordres De Fabrication"
             DataClassification = ToBeClassified;
             Caption = 'Ordre Id';
         }
-        field(2; produit_id; Integer)
+        field(2; produit_id; Code[20])
         {
             DataClassification = ToBeClassified;
             Caption = 'Produit Id';
+            TableRelation = "Item"."No.";
         }
         field(3; quantite; Integer)
         {
@@ -28,6 +29,18 @@ table 60002 "Ordres De Fabrication"
         {
             DataClassification = ToBeClassified;
             Caption = 'Date Fin Prévue';
+        }
+        field(6; produit_description; Text[100])
+        {
+            Caption = 'Produit Description';
+            FieldClass = FlowField;
+            CalcFormula = lookup("Item".Description where("No." = field(produit_id)));
+        }
+        field(7; produit_unit_cost; Decimal)
+        {
+            Caption = 'Produit Unit Cost';
+            FieldClass = FlowField;
+            CalcFormula = lookup("Item"."Unit Cost" where("No." = field(produit_id)));
         }
 
     }

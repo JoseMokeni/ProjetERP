@@ -3,6 +3,14 @@ pageextension 60022 "Clients List" extends "Customer List"
     layout
     {
         // Add changes to page layout here
+        addafter("Phone No.")
+        {
+            field("Adress"; rec."Adress")
+            {
+                ApplicationArea = All;
+                Caption = 'Adress';
+            }
+        }
         modify("Responsibility Center")
         {
             Visible = false;
@@ -27,6 +35,7 @@ pageextension 60022 "Clients List" extends "Customer List"
         {
             Visible = false;
         }
+
     }
 
     actions

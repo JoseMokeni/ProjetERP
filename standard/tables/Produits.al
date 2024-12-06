@@ -2,7 +2,11 @@ tableextension 60027 "Produits" extends Item
 {
     fields
     {
-        // Add changes to table fields here
+        field(60028; "TVA"; Integer)
+        {
+            Caption = 'TVA';
+            DataClassification = ToBeClassified;
+        }
     }
 
     keys

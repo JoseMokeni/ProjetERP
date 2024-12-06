@@ -22,6 +22,16 @@ page 60003 "Odres De Fabrication Card"
                     ApplicationArea = All;
                     Caption = 'Produit Id';
                 }
+                field(produit_description; Rec.produit_description)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Produit Description';
+                }
+                field(produit_unit_cost; Rec.produit_unit_cost)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Produit Unit Cost';
+                }
                 field(quantite; Rec.quantite)
                 {
                     ApplicationArea = All;

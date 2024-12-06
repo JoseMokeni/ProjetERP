@@ -2,7 +2,10 @@ tableextension 60018 "Clients" extends Customer
 {
     fields
     {
-        // Add changes to table fields here
+        field(60000; "Adress"; Text[100])
+        {
+            DataClassification = ToBeClassified;
+        }
 
     }
 

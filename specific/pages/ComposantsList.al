@@ -1,6 +1,6 @@
 page 60000 "Composants List"
 {
-    Caption = 'Compomants List';
+    Caption = 'Composants List';
     PageType = List;
     UsageCategory = Lists;
     ApplicationArea = All;

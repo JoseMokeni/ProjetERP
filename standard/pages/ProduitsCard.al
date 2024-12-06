@@ -96,6 +96,34 @@ pageextension 60030 "Produits Card" extends "Item Card"
         {
             Visible = false;
         }
+        modify(InventoryGrp)
+        {
+            Visible = false;
+        }
+        modify("Costs & Posting")
+        {
+            Visible = false;
+        }
+        modify("Unit Cost")
+        {
+            Visible = true;
+        }
+        modify(Description)
+        {
+            Visible = true;
+        }
+        modify("Search Description")
+        {
+            Visible = true;
+        }
+        addafter("Unit Cost")
+        {
+            field("TVA"; rec."TVA")
+            {
+                ApplicationArea = All;
+                Caption = 'TVA';
+            }
+        }
 
     }
 
