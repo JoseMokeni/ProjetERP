@@ -20,8 +20,26 @@ table 60003 "Produit Composant"
         field(3; quantite; Decimal)
         {
             DataClassification = ToBeClassified;
-            Caption = 'Quantité nécessaire';
+            Caption = 'Necessary Quantity';
             MinValue = 0;
+        }
+        field(4; produit_nom; Text[100])
+        {
+            Caption = 'Product Name';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup(Item.Description where(
+                "No." = field(produit_id)));
+
+        }
+        field(5; composant_nom; Text[100])
+        {
+            Caption = 'Component Name';
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = lookup(Composants.Nom where(
+                Composant_Id = field(composant_id)));
+
         }
     }
 

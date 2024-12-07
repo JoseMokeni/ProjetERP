@@ -31,6 +31,24 @@ pageextension 69307 "Commandes Clients List" extends "Purchase Order List"
         {
             StyleExpr = StatusStyleTxt;
         }
+        addafter("Assigned User ID")
+        {
+            field("Client Name"; Rec."Client Name")
+            {
+                ApplicationArea = All;
+                Caption = 'Client Name';
+            }
+            field("Client Contact"; Rec."Client Contact")
+            {
+                ApplicationArea = All;
+                Caption = 'Client Contact';
+            }
+            field("Client adresse"; Rec."Client adresse")
+            {
+                ApplicationArea = All;
+                Caption = 'Client adresse';
+            }
+        }
     }
 
     actions

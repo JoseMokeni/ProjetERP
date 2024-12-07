@@ -40,6 +40,24 @@ pageextension 60050 "Commandes Clients Card" extends "Purchase Order"
         {
             Visible = false;
         }
+        addafter("Assigned User ID")
+        {
+            field("Client Name"; Rec."Client Name")
+            {
+                ApplicationArea = All;
+                Caption = 'Client Name';
+            }
+            field("Client Contact"; Rec."Client Contact")
+            {
+                ApplicationArea = All;
+                Caption = 'Client Contact';
+            }
+            field("Client adresse"; Rec."Client adresse")
+            {
+                ApplicationArea = All;
+                Caption = 'Client adresse';
+            }
+        }
     }
 
     actions
