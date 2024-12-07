@@ -27,6 +27,10 @@ pageextension 69307 "Commandes Clients List" extends "Purchase Order List"
         {
             Visible = false;
         }
+        modify(Status)
+        {
+            StyleExpr = StatusStyleTxt;
+        }
     }
 
     actions
@@ -35,5 +39,22 @@ pageextension 69307 "Commandes Clients List" extends "Purchase Order List"
     }
 
     var
+        [InDataSet]
+        StatusStyleTxt: Text;
         myInt: Integer;
+
+    trigger OnAfterGetRecord()
+    begin
+        StatusStyleTxt := SetStatusStyle();
+    end;
+
+    local procedure SetStatusStyle(): Text
+    begin
+        case Rec.Status of
+            Rec.Status::Released:
+                exit('Favorable');
+            else
+                exit('Ambiguous');
+        end;
+    end;
 }
