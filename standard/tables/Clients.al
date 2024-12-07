@@ -44,4 +44,14 @@ tableextension 60018 "Clients" extends Customer
         ActivityLogSetup."Date Time" := CurrentDateTime;
         ActivityLogSetup.Insert();
     end;
+
+    trigger OnBeforeDelete()
+    var
+        CommandeClient: Record "Purchase Header";
+        ErrorMsg: Text;
+    begin
+        CommandeClient.SetRange("Client Name", Rec.Name);
+        if CommandeClient.FindFirst() then
+            Error('Impossible de supprimer le client %1. Il a des commandes existantes de ce client.', Rec.Name);
+    end;
 }
