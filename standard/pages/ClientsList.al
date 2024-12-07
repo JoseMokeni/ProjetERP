@@ -5,7 +5,7 @@ pageextension 60022 "Clients List" extends "Customer List"
         // Add changes to page layout here
         addafter("Phone No.")
         {
-            field("Adress"; rec."Adress")
+            field("Adress"; rec."Adresse")
             {
                 ApplicationArea = All;
                 Caption = 'Adress';

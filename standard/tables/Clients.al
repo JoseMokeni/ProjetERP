@@ -2,7 +2,7 @@ tableextension 60018 "Clients" extends Customer
 {
     fields
     {
-        field(60000; "Adress"; Text[100])
+        field(60000; "Adresse"; Text[100])
         {
             DataClassification = ToBeClassified;
         }
@@ -28,7 +28,7 @@ tableextension 60018 "Clients" extends Customer
             Error('Le numéro client ne peut pas être vide.');
         if Name = '' then
             Error('Le nom ne peut pas être vide.');
-        if "Adress" = '' then
+        if "Adresse" = '' then
             Error('L''adresse ne peut pas être vide.');
     end;
 

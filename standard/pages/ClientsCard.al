@@ -5,7 +5,7 @@ pageextension 60021 MyExtension extends "Customer Card"
         // Add changes to page layout here
         addafter("Phone No.")
         {
-            field("Adress"; rec."Adress")
+            field("Adress"; rec."Adresse")
             {
                 ApplicationArea = All;
                 Caption = 'Adress';
