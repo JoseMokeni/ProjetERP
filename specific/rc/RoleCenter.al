@@ -20,12 +20,12 @@ page 60100 "Manufacturing Role Center"
             }
             group(Lists)
             {
-                part(ManufOrderList; "Ordres De Fabrication List")
+                part(ManufOrderList; "Ordres De Fabrication ListPart")
                 {
                     ApplicationArea = All;
                     Caption = 'Manufacturing Orders';
                 }
-                part(ComponentsList; "Composants List")
+                part(ComponentsList; "Composants ListPart")
                 {
                     ApplicationArea = All;
                     Caption = 'Components';

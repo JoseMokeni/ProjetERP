@@ -1,4 +1,4 @@
-table 60000 Composants
+table 60088 Composants
 {
     DataClassification = ToBeClassified;
 
