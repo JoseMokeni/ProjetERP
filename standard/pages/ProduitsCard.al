@@ -198,4 +198,19 @@ pageextension 60030 "Produits Card" extends "Item Card"
 
     var
         myInt: Integer;
+
+    trigger OnOpenPage()
+    var
+        InventorySetup: Record "Inventory Setup";
+    begin
+        InventorySetup.Get();
+        InventorySetup."Item Nos." := '';
+        InventorySetup.Modify();
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        Rec.Init();
+        Rec.Type := Rec.Type::Inventory;
+    end;
 }

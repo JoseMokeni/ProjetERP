@@ -65,6 +65,21 @@ pageextension 60050 "Commandes Clients Card" extends "Purchase Order"
         // Add changes to page actions here
     }
 
+    trigger OnOpenPage()
+    var
+        PurchSetup: Record "Purchases & Payables Setup";
+    begin
+        PurchSetup.Get();
+        PurchSetup."Order Nos." := '';
+        PurchSetup.Modify();
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        Rec.Init();
+        Rec."Document Type" := Rec."Document Type"::Order;
+    end;
+
     var
         myInt: Integer;
 }
