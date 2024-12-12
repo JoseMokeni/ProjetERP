@@ -2,14 +2,19 @@ pageextension 60031 "Produits List" extends "Item List"
 {
     layout
     {
+
         // Add changes to page layout here
-        addafter("Unit Cost")
+        addafter("Description")
         {
             field("TVA"; rec."TVA")
             {
                 ApplicationArea = All;
                 Caption = 'TVA';
             }
+        }
+        modify("Standard Cost")
+        {
+            Visible = true;
         }
 
         modify("Default Deferral Template Code")
@@ -21,6 +26,10 @@ pageextension 60031 "Produits List" extends "Item List"
             Visible = false;
         }
         modify("Unit Price")
+        {
+            Visible = false;
+        }
+        modify("Unit Cost")
         {
             Visible = false;
         }
