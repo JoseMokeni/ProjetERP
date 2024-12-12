@@ -41,6 +41,14 @@ page 60100 "Manufacturing Role Center"
                     Caption = 'Products';
                 }
             }
+            group(ActivityLogGroup)
+            {
+                Caption = 'Activity Log';
+                part(ActivityLogPart; "Activity Log ListPart")
+                {
+                    ApplicationArea = All;
+                }
+            }
         }
     }
 
