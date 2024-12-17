@@ -1,6 +1,6 @@
 page 60000 "Composants List"
 {
-    Caption = 'Composants List';
+    Caption = 'Component List';
     PageType = List;
     UsageCategory = Lists;
     ApplicationArea = All;
@@ -16,12 +16,12 @@ page 60000 "Composants List"
                 field(Composant_Id; Rec.Composant_Id)
                 {
                     ApplicationArea = All;
-                    Caption = 'Composant Id';
+                    Caption = 'Component Id';
                 }
                 field(Nom; Rec.Nom)
                 {
                     ApplicationArea = All;
-                    Caption = 'Nom';
+                    Caption = 'Name';
                 }
                 field(Type; Rec.Type)
                 {

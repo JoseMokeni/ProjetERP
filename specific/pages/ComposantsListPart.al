@@ -1,7 +1,7 @@
 
 page 60015 "Composants ListPart"
 {
-    Caption = 'Composants';
+    Caption = 'Component';
     PageType = ListPart;
     SourceTable = Composants;
 

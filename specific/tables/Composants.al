@@ -7,12 +7,12 @@ table 60088 Composants
         field(1; Composant_Id; Code[20])
         {
             DataClassification = ToBeClassified;
-            Caption = 'Composant Id';
+            Caption = 'Component Id';
         }
         field(2; Nom; Text[100])
         {
             DataClassification = ToBeClassified;
-            Caption = 'Nom';
+            Caption = 'Name';
         }
         field(3; Type; Enum "Composant Type")
         {
@@ -44,12 +44,12 @@ table 60088 Composants
 
     trigger OnInsert()
     begin
-        if Composant_Id = '' then
-            Error('Le Composant Id ne peut pas être vide.');
-        if Nom = '' then
-            Error('Le Nom ne peut pas être vide.');
-        if Stock < 0 then
-            Error('Le Stock ne peut pas être négatif.');
+        if Rec.Composant_Id = '' then
+            Error('Id Cant be empty.');
+        if Rec.Nom = '' then
+            Error('Name Cant be empty.');
+        if Rec.Stock < 0 then
+            Error('Stock Cant be lower than 0.');
     end;
 
     trigger OnModify()
@@ -59,7 +59,7 @@ table 60088 Composants
         ActivityLogSetup.Init();
         ActivityLogSetup."Record ID" := Rec.Composant_Id;
         ActivityLogSetup."Table Name" := TableCaption;
-        ActivityLogSetup."Activity Description" := StrSubstNo('Composant %1 modifié', Rec.Composant_Id);
+        ActivityLogSetup."Activity Description" := StrSubstNo('Component %1 Modified', Rec.Composant_Id);
         ActivityLogSetup."User ID" := UserId;
         ActivityLogSetup."Date Time" := CurrentDateTime;
         ActivityLogSetup.Insert();
@@ -82,7 +82,7 @@ table 60088 Composants
         ProduitComposant.SetRange(composant_id, Rec.Composant_Id);
         if ProduitComposant.FindSet() then begin
             Item.Get(ProduitComposant.produit_id);
-            ErrorMsg := StrSubstNo('Impossible de supprimer le composant %1. Il est utilisé dans le produit %2 (%3).',
+            ErrorMsg := StrSubstNo('Impossible to delete the component %1. Its used in the product %2 (%3).',
                 Rec.Composant_Id, Item."No.", Item.Description);
             exit(false);
         end;

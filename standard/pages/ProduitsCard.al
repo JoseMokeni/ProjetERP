@@ -180,7 +180,7 @@ pageextension 60030 "Produits Card" extends "Item Card"
         {
             group(ComponentsInfo)
             {
-                Caption = 'Components Information';
+                Caption = 'Electronic components information';
 
                 part(SubComponents; "Sub Components List Part")
                 {

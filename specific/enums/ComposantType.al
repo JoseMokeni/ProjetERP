@@ -38,4 +38,8 @@ enum 60004 "Composant Type"
     {
         Caption = 'Case';
     }
+    value(9; "Monitor")
+    {
+        Caption = 'Monitor';
+    }
 }

@@ -1,6 +1,6 @@
 page 60002 "Ordres De Fabrication List"
 {
-    Caption = 'Ordres De Fabrication List';
+    Caption = 'Fabrication ordre List';
     PageType = List;
     UsageCategory = Lists;
     ApplicationArea = All;
@@ -20,32 +20,32 @@ page 60002 "Ordres De Fabrication List"
                 field(produit_id; Rec.produit_id)
                 {
                     ApplicationArea = All;
-                    Caption = 'Produit Id';
+                    Caption = 'Product Id';
                 }
                 field(produit_description; Rec.produit_description)
                 {
                     ApplicationArea = All;
-                    Caption = 'Produit Description';
+                    Caption = 'Product Description';
                 }
                 field(produit_unit_cost; Rec.produit_unit_cost)
                 {
                     ApplicationArea = All;
-                    Caption = 'Produit Unit Cost';
+                    Caption = 'Product Unit Cost';
                 }
                 field(quantite; Rec.quantite)
                 {
                     ApplicationArea = All;
-                    Caption = 'Quantité';
+                    Caption = 'Quantity';
                 }
                 field(date_debut; Rec.date_debut)
                 {
                     ApplicationArea = All;
-                    Caption = 'Date Début';
+                    Caption = 'Start Date';
                 }
                 field(date_fin_prev; Rec.date_fin_prev)
                 {
                     ApplicationArea = All;
-                    Caption = 'Date Fin Prévue';
+                    Caption = 'End Date Planned';
                     StyleExpr = DeadlineStyle;
                 }
 

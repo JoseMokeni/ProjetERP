@@ -4,7 +4,7 @@ page 60001 "Composants Card"
     ApplicationArea = All;
     UsageCategory = Documents;
     SourceTable = Composants;
-    Caption = 'Composants Card';
+    Caption = 'Component Card';
 
     layout
     {
@@ -15,12 +15,12 @@ page 60001 "Composants Card"
                 field(Composant_Id; Rec.Composant_Id)
                 {
                     ApplicationArea = All;
-                    Caption = 'Composant Id';
+                    Caption = 'Component Id';
                 }
                 field(Nom; Rec.Nom)
                 {
                     ApplicationArea = All;
-                    Caption = 'Nom';
+                    Caption = 'Name';
                 }
                 field(Type; Rec.Type)
                 {

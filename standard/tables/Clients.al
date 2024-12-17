@@ -52,6 +52,6 @@ tableextension 60018 "Clients" extends Customer
     begin
         CommandeClient.SetRange("Client Name", Rec.Name);
         if CommandeClient.FindFirst() then
-            Error('Impossible de supprimer le client %1. Il a des commandes existantes de ce client.', Rec.Name);
+            Error('Cant delete the client %1. There is ordres of this client that exist.', Rec.Name);
     end;
 }

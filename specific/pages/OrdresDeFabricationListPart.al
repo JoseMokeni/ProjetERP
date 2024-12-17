@@ -1,7 +1,7 @@
 
 page 60056 "Ordres De Fabrication ListPart"
 {
-    Caption = 'Ordres De Fabrication';
+    Caption = 'Fabrication Ordre List Part';
     PageType = ListPart;
     SourceTable = "Ordres De Fabrication";
 
