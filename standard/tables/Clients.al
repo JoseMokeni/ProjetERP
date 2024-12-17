@@ -24,12 +24,12 @@ tableextension 60018 "Clients" extends Customer
 
     trigger OnBeforeInsert()
     begin
-        if "No." = '' then
-            Error('Le numéro client ne peut pas être vide.');
-        if Name = '' then
-            Error('Le nom ne peut pas être vide.');
-        if "Adresse" = '' then
-            Error('L''adresse ne peut pas être vide.');
+        // if "No." = '' then
+        //     Error('Le numéro client ne peut pas être vide.');
+        // if Name = '' then
+        //     Error('Le nom ne peut pas être vide.');
+        // if "Adresse" = '' then
+        //     Error('L''adresse ne peut pas être vide.');
     end;
 
     trigger OnAfterModify()

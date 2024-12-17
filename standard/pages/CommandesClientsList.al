@@ -33,6 +33,11 @@ pageextension 69307 "Commandes Clients List" extends "Purchase Order List"
         }
         addafter("Assigned User ID")
         {
+            field("Client Code"; Rec."Client Code")
+            {
+                ApplicationArea = All;
+                Caption = 'Client Code';
+            }
             field("Client Name"; Rec."Client Name")
             {
                 ApplicationArea = All;

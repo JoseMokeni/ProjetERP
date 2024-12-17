@@ -22,12 +22,12 @@ tableextension 60027 "Produits" extends Item
     var
         myInt: Integer;
 
-    trigger OnBeforeInsert()
+    trigger OnInsert()
     begin
-        if Rec."No." = '' then
-            Error('Le numéro du produit ne peut pas être vide.');
-        if Rec.Description = '' then
-            Error('La description ne peut pas être vide.');
+        // if Rec."No." = '' then
+        //     Error('Le numéro du produit ne peut pas être vide.');
+        // if Rec.Description = '' then
+        //     Error('La description ne peut pas être vide.');
         if Rec."TVA" < 0 then
             Error('La TVA ne peut pas être négative.');
     end;

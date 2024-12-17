@@ -2,21 +2,32 @@ tableextension 60038 "Commandes Clients" extends "Purchase Header"
 {
     fields
     {
+        field(60004; "Client Code"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            TableRelation = "Customer"."No.";
+        }
         field(60000; "Client Name"; Text[100])
         {
-            DataClassification = CustomerContent;
-            TableRelation = "Customer"."Name";
+            // DataClassification = CustomerContent;
+            // TableRelation = "Customer"."Name";
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = Lookup("Customer".Name WHERE("No." = FIELD("Client Code")));
+
         }
 
-        field(60001; "Client Contact"; Text[50])
+        field(60001; "Client Contact"; Text[100])
         {
-            DataClassification = CustomerContent;
-            TableRelation = "Customer"."Contact";
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = Lookup("Customer".Contact WHERE("No." = FIELD("Client Code")));
         }
-        field(60002; "Client adresse"; Text[50])
+        field(60002; "Client adresse"; Text[100])
         {
-            DataClassification = CustomerContent;
-            TableRelation = "Customer"."adresse";
+            Editable = false;
+            FieldClass = FlowField;
+            CalcFormula = Lookup("Customer".Address WHERE("No." = FIELD("Client Code")));
         }
     }
 
@@ -35,14 +46,14 @@ tableextension 60038 "Commandes Clients" extends "Purchase Header"
 
     trigger OnBeforeInsert()
     begin
-        if "No." = '' then
-            Error('Le numéro de commande ne peut pas être vide.');
-        if "Client Name" = '' then
-            Error('Le nom du client ne peut pas être vide.');
-        if "Client Contact" = '' then
-            Error('Le contact client ne peut pas être vide.');
-        if "Client adresse" = '' then
-            Error('L''adresse client ne peut pas être vide.');
+        // if "No." = '' then
+        //     Error('Le numéro de commande ne peut pas être vide.');
+        // if "Client Name" = '' then
+        //     Error('Le nom du client ne peut pas être vide.');
+        // if "Client Contact" = '' then
+        //     Error('Le contact client ne peut pas être vide.');
+        // if "Client adresse" = '' then
+        //     Error('L''adresse client ne peut pas être vide.');
     end;
 
     trigger OnAfterModify()
