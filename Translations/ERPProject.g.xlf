@@ -278,6 +278,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page Manufacturing Cues - Control Total Active Orders - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Page 2311205100 - Action 2235593467 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View Due Soon Orders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Manufacturing Cues - Action DrillDown Due Soon Orders - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2311205100 - Action 832226327 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View Low Stock Components</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Manufacturing Cues - Action DrillDown Low Stock Components - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2311205100 - Action 2403019454 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>View Overdue Orders</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page Manufacturing Cues - Action DrillDown Overdue Orders - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2311205100 - Action 2026913255 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Refresh</source>
           <note from="Developer" annotates="general" priority="2"></note>

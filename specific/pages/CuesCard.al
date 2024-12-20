@@ -90,6 +90,55 @@ page 60102 "Manufacturing Cues"
                     CurrPage.Update();
                 end;
             }
+
+            group("DrillDown Actions")
+            {
+                action("DrillDown Low Stock Components")
+                {
+                    Caption = 'View Low Stock Components';
+                    Image = View;
+
+                    trigger OnAction()
+                    var
+                        ComposantsRec: Record "Composants";
+                    begin
+                        ComposantsRec.SetRange(Stock, 0, 4); // Stock less than 5
+                        PAGE.RUN(PAGE::"Composants List", ComposantsRec);
+                    end;
+                }
+                action("DrillDown Overdue Orders")
+                {
+                    Caption = 'View Overdue Orders';
+                    Image = View;
+
+                    trigger OnAction()
+                    var
+                        Today: Date;
+                        OrdresFabRec: Record "Ordres De Fabrication";
+                    begin
+                        Today := WorkDate();
+                        OrdresFabRec.SetFilter(date_fin_prev, '<=%1', Today);
+                        PAGE.RUN(PAGE::"Ordres De Fabrication List", OrdresFabRec);
+                    end;
+                }
+                action("DrillDown Due Soon Orders")
+                {
+                    Caption = 'View Due Soon Orders';
+                    Image = View;
+
+                    trigger OnAction()
+                    var
+                        Today: Date;
+                        DueDate: Date;
+                        OrdresFabRec: Record "Ordres De Fabrication";
+                    begin
+                        Today := WorkDate();
+                        DueDate := CALCDATE('<2D>', Today);
+                        OrdresFabRec.SetFilter(date_fin_prev, '%1..%2', Today, DueDate);
+                        PAGE.RUN(PAGE::"Ordres De Fabrication List", OrdresFabRec);
+                    end;
+                }
+            }
         }
     }
 
